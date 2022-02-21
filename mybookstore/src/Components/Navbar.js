@@ -10,13 +10,13 @@ const Navbar = () => {
           Bookstore<span className='cms'>CMS</span>{' '}
         </h1>
         <ul className='nav-ul'>
-          <li>
+          <li className='link'>
             <Link to='./'>BOOKS</Link>
           </li>
-          <li>
+          <li className='link'>
             <Link to='./category'>CATEGORIES</Link>
           </li>
-          <li>
+          <li className='cont-icon'>
             <ImUser />
           </li>
         </ul>

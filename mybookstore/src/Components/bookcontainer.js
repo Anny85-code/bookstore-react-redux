@@ -3,21 +3,14 @@ import Addform from './addform';
 import Booklist from './booklist';
 
 const BooksContainer = () => {
-  const numb = document.getElementsByClassName('.number');
-  let counter = 0;
-  setInterval(() => {
-    if (counter === 100) {
-      clearInterval();
-    } else {
-      counter += 1;
-      numb.textContent = counter + '%';
-    }
-  }, 80);
-
+  const styleln = {
+    width: '90%',
+    margin: '20px 40px',
+  };
   return (
     <div className='main-display'>
       <Booklist />
-      <hr />
+      <hr style={styleln} />
       <Addform />
     </div>
   );
