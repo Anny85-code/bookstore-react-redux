@@ -1,19 +1,8 @@
 import React from 'react';
 
-const books = () => {
-  const numb = document.getElementsByClassName('.number');
-  let counter = 0;
-  setInterval(() => {
-    if (counter === 100) {
-      clearInterval();
-    } else {
-      counter += 1;
-      numb.textContent = counter + '%';
-    }
-  }, 80);
-
+const BookItems = () => {
   return (
-    <div className='main-display'>
+    <>
       <div className='books'>
         <ul>
           <li className='title'>Action</li>
@@ -47,17 +36,8 @@ const books = () => {
         </ul>
         <button type='submit'>Update Progress</button>
       </div>
-      <hr />
-      <div>
-        <h2>Add New Book</h2>
-        <form action='#'>
-          <input type='text' placeholder='Book Title' />
-          <input type='text' placeholder='Category' />
-          <input type='submit' className='input-btn' placeholder='Add Book' />
-        </form>
-      </div>
-    </div>
+    </>
   );
 };
 
-export default books;
+export default BookItems;
