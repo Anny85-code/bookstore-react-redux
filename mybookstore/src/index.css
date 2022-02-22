@@ -1,13 +1,158 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary: #eb7d34;
+  --secondary: #ada7a6;
+  --dark: #1c1b1b;
+  --light: #eee;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+html,
+body {
+  display: grid;
+  height: 100%;
+  text-align: center;
+  place-items: center;
+  background: #dde6f0;
+}
+
+.main-heading {
+  color: rgb(16, 120, 216);
+}
+
+.cms {
+  font-size: 27px;
+  margin-left: 5px;
+}
+
+.main-display {
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 64px rgba(0, 0, 0, 0.2);
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--light);
+  padding: 10px 0 10px 30px;
+}
+
+.nav-ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 4fr;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: var(--secondary);
+  font-size: 15px;
+}
+
+.cont-icon {
+  margin-left: 200px;
+}
+
+.link {
+  margin-top: 8px;
+}
+
+.book-container {
+  display: flex;
+  background-color: var(--light);
+  width: 89%;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.author {
+  color: rgb(136, 136, 211);
+  font-size: 14px;
+}
+
+.book-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.last-row-container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.last-row {
+  margin-right: 10px;
+  color: rgb(136, 136, 211);
+  font-size: 14px;
+}
+
+.left-row {
+  margin: 10px;
+  font-weight: 700;
+}
+
+.left-row-btn {
+  width: 150px;
+  padding: 5px;
+  background-color: rgb(16, 120, 216);
+  color: var(--secondary);
+}
+
+.top {
+  color: #615c5c;
+  font-weight: 200;
+}
+
+.form-items {
+  padding-bottom: 40px;
+}
+
+form {
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.form-header {
+  text-align: left;
+  margin-bottom: 8px;
+  padding-left: 35px;
+  font-size: 18px;
+}
+
+.input {
+  margin-right: 20px;
+  padding: 5px;
+}
+
+.name {
+  width: 300px;
+}
+
+.category {
+  width: 200px;
+}
+
+.btn {
+  width: 155px;
+  color: var(--light);
+  background-color: rgb(16, 120, 216);
+}
+
+.ftn {
+  margin-left: 30px;
 }
