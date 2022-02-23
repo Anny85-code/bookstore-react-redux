@@ -1,18 +1,23 @@
 import React from 'react';
-import Addform from './addform';
-import Booklist from './booklist';
+import { useSelector } from 'react-redux';
+import AddForm from './addform';
+import BookItem from './bookitems';
 
 const BooksContainer = () => {
-  const styleln = {
-    width: '90%',
-    margin: '20px 40px',
-  };
+  const books = useSelector((state) => state.booksReducer);
+
   return (
-    <div className='main-display'>
-      <Booklist />
-      <hr style={styleln} />
-      <Addform />
-    </div>
+    <>
+      <div className='main-display'>
+        {books.map((book) => (
+          <div key={book.id}>
+            <BookItem props={book} />
+            <br />
+          </div>
+        ))}
+      </div>
+      <AddForm />
+    </>
   );
 };
 

@@ -1,63 +1,30 @@
-import React from 'react';
+// books.js
 
-const books = () => {
-  const numb = document.getElementsByClassName('.number');
-  let counter = 0;
-  setInterval(() => {
-    if (counter === 100) {
-      clearInterval();
-    } else {
-      counter += 1;
-      numb.textContent = counter + '%';
-    }
-  }, 80);
+const ADD_BOOK = 'bookStore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 
-  return (
-    <div className='main-display'>
-      <div className='books'>
-        <ul>
-          <li className='title'>Action</li>
-          <li className='book-name'>The Hunger game</li>
-          <li className='author'>Suzanne Collins</li>
-        </ul>
-        <ul>
-          <li className='last-row'>Comments |</li>
-          <li className='last-row'>Remove |</li>
-          <li className='last-row'>Edit</li>
-        </ul>
-      </div>
+const initialState = [];
 
-      <div class='circular'>
-        <div class='inner'></div>
-        <div class='number'>100%</div>
-        <div class='circle'>
-          <div class='bar left'>
-            <div class='progress'></div>
-          </div>
-          <div class='bar right'>
-            <div class='progress'></div>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div>
-        <ul>
-          <li>Current Chapter</li>
-          <li>Chapter 17</li>
-        </ul>
-        <button type='submit'>Update Progress</button>
-      </div>
-      <hr />
-      <div>
-        <h2>Add New Book</h2>
-        <form action='#'>
-          <input type='text' placeholder='Book Title' />
-          <input type='text' placeholder='Category' />
-          <input type='submit' className='input-btn' placeholder='Add Book' />
-        </form>
-      </div>
-    </div>
-  );
+export const addBook = (payload) => ({
+  type: ADD_BOOK,
+  payload,
+});
+export const removeBook = (payload) => ({
+  type: REMOVE_BOOK,
+  payload,
+});
+
+const booksReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_BOOK:
+      return [...state, action.payload];
+
+    case REMOVE_BOOK:
+      return state.filter((book) => book.id !== action.payload);
+
+    default:
+      return state;
+  }
 };
 
-export default books;
+export default booksReducer;

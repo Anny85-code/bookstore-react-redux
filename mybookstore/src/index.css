@@ -58,7 +58,7 @@ a:-webkit-any-link {
 }
 
 .cont-icon {
-  margin-left: 200px;
+  margin-left: 450px;
 }
 
 .link {
@@ -99,6 +99,7 @@ a:-webkit-any-link {
   margin-right: 10px;
   color: rgb(136, 136, 211);
   font-size: 14px;
+  cursor: pointer;
 }
 
 .left-row {
