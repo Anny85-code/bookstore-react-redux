@@ -1,21 +1,34 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../Redux/Books/books';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-const BookItems = () => {
+const BookItem = ({ props }) => {
+  const { id, category, tittle, author } = props;
+
+  const dispatch = useDispatch();
+
+  const Remove = () => {
+    dispatch(removeBook(id));
+  };
+
   const percentage = 66;
 
   return (
     <div className='book-container'>
       <div className='books'>
         <ul>
-          <li className='title'>Action</li>
-          <li className='book-name'>The Hunger game</li>
-          <li className='author'>Suzanne Collins</li>
+          <li className='title category'>{category}</li>
+          <li className='book-name'>{tittle}</li>
+          <li className='author'>{author}</li>
         </ul>
         <ul className='last-row-container'>
           <li className='last-row'>Comments |</li>
-          <li className='last-row'>Remove |</li>
+          <li className='last-row' id={id} onClick={Remove}>
+            Remove |
+          </li>
           <li className='last-row'>Edit</li>
         </ul>
       </div>
@@ -36,5 +49,11 @@ const BookItems = () => {
     </div>
   );
 };
+BookItem.propTypes = {
+  category: PropTypes.string.isRequired,
+  tittle: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  props: PropTypes.arrayOf.isRequired,
+};
 
-export default BookItems;
+export default BookItem;

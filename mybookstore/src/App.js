@@ -1,4 +1,7 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './Redux/configureStore';
 import Navbar from './Components/Navbar';
 import BooksContainer from './Components/bookcontainer';
 import Categories from './pages/categories';
@@ -6,13 +9,15 @@ import './index.css';
 
 function App() {
   return (
-    <div className='main-display'>
-      <Navbar />
-      <Routes>
-        <Route path='/' exact element={<BooksContainer />} />
-        <Route path='/categories' element={<Categories />} />
-      </Routes>
-    </div>
+    <>
+      <Provider store={store}>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<BooksContainer />} />
+          <Route path='/categories' element={<Categories />} />
+        </Routes>
+      </Provider>
+    </>
   );
 }
 
