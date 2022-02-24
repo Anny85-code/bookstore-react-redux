@@ -6,12 +6,12 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const BookItem = ({ props }) => {
-  const { id, category, title } = props;
+  const { item_id, category, title } = props;
 
   const dispatch = useDispatch();
 
-  const handleRemoveBook = () => {
-    dispatch(deleteBook(id));
+  const handleRemoveBook = (item_id) => {
+    dispatch(deleteBook(item_id));
   };
 
   const percentage = 66;
@@ -25,7 +25,11 @@ const BookItem = ({ props }) => {
         </ul>
         <ul className='last-row-container'>
           <li className='last-row'>Comments |</li>
-          <li className='last-row' type='button' onClick={handleRemoveBook}>
+          <li
+            className='last-row'
+            type='button'
+            onClick={() => handleRemoveBook(item_id)}
+          >
             Remove |
           </li>
           <li className='last-row'>Edit</li>
@@ -51,8 +55,7 @@ const BookItem = ({ props }) => {
 BookItem.propTypes = {
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  // author: PropTypes.string.isRequired,
-  props: PropTypes.func.isRequired,
+  props: PropTypes.arrayOf.isRequired,
 };
 
 export default BookItem;

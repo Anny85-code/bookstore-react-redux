@@ -1,34 +1,35 @@
-import { React, useRef } from 'react';
+import { React, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
 import { addBookApi } from '../Redux/Books/books';
 
 const AddForm = () => {
-  const titleInputRef = useRef();
-  const categoryInputRef = useRef();
   const dispatch = useDispatch();
 
-  // const tittleHandle = (element) => setTittle(element.target.value);
-  // const authorHandle = (element) => setAuthor(element.target.value);
-  // const categoryHandle = (element) => setCategory(element.target.value);
-  // const clearTittle = () => setTittle('');
-  // const clearAuthor = () => setAuthor('');
+  const setup = () => ({
+    item_id: '',
+    title: '',
+    category: '',
+  });
+
+  const [bookData, setBookData] = useState(setup());
+
+  const changeHandler = (event) => {
+    setBookData((prevState) => ({
+      ...prevState,
+      item_id: nanoid(),
+      [event.target.name]: event.target.value,
+    }));
+  };
+
+  const { title, category } = bookData;
 
   function submitBookToStore(event) {
     event.preventDefault();
-    const newBook = {
-      item_id: nanoid(),
-      title: titleInputRef.current.value,
-      category: categoryInputRef.current.value,
-    };
-    dispatch(addBookApi(newBook));
-    titleInputRef.current.value = '';
-    categoryInputRef();
-  }
 
-  // dispatch(addBook(newBook));
-  // clearTittle();
-  // clearAuthor();
+    dispatch(addBookApi(bookData));
+    setBookData(setup());
+  }
 
   const styleln = {
     width: '90%',
@@ -45,7 +46,9 @@ const AddForm = () => {
             type='text'
             className='input name'
             id='title'
-            ref={titleInputRef}
+            name='title'
+            value={title}
+            onChange={changeHandler}
             placeholder='Book Title'
             required
           />
@@ -55,9 +58,11 @@ const AddForm = () => {
             value={category}
             id='category'
             name='category'
-            ref={categoryInputRef}
+            onChange={changeHandler}
           >
-            <option hidden>Category</option>
+            <option hidden value=''>
+              Category
+            </option>
             <option value='classic'>Classic</option>
             <option value='fantasy'>Fantasy</option>
             <option value='thriller'>Thriller</option>

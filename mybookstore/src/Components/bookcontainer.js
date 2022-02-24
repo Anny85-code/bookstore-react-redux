@@ -7,7 +7,6 @@ import { getBooks } from '../Redux/Books/books';
 const BooksContainer = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    // dispatch(clearBooks());
     dispatch(getBooks());
   }, []);
   const books = useSelector((state) => state.booksReducer);
