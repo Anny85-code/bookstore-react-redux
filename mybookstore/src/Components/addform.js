@@ -1,34 +1,34 @@
-import React from 'react';
-import { useState } from 'react';
+import { React, useRef } from 'react';
+import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../Redux/Books/books';
+import { addBookApi } from '../Redux/Books/books';
 
 const AddForm = () => {
-  const [tittle, setTittle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('');
+  const titleInputRef = useRef();
+  const categoryInputRef = useRef();
   const dispatch = useDispatch();
 
-  const tittleHandle = (element) => setTittle(element.target.value);
-  const authorHandle = (element) => setAuthor(element.target.value);
-  const categoryHandle = (element) => setCategory(element.target.value);
-  const clearTittle = () => setTittle('');
-  const clearAuthor = () => setAuthor('');
+  // const tittleHandle = (element) => setTittle(element.target.value);
+  // const authorHandle = (element) => setAuthor(element.target.value);
+  // const categoryHandle = (element) => setCategory(element.target.value);
+  // const clearTittle = () => setTittle('');
+  // const clearAuthor = () => setAuthor('');
 
-  const submitBookToStore = (e) => {
-    e.preventDefault();
+  function submitBookToStore(event) {
+    event.preventDefault();
     const newBook = {
-      tittle,
-      category,
-      author,
-      id: uuidv4(),
+      item_id: nanoid(),
+      title: titleInputRef.current.value,
+      category: categoryInputRef.current.value,
     };
+    dispatch(addBookApi(newBook));
+    titleInputRef.current.value = '';
+    categoryInputRef.current.value = '';
+  }
 
-    dispatch(addBook(newBook));
-    clearTittle();
-    clearAuthor();
-  };
+  // dispatch(addBook(newBook));
+  // clearTittle();
+  // clearAuthor();
 
   const styleln = {
     width: '90%',
@@ -44,32 +44,20 @@ const AddForm = () => {
           <input
             type='text'
             className='input name'
-            value={tittle}
-            onChange={tittleHandle}
+            id='title'
+            ref={titleInputRef}
             placeholder='Book Title'
             required
           />
           <input
             type='text'
-            className='input author'
-            value={author}
-            onChange={authorHandle}
-            placeholder='Book Author'
-            required
-          />
-          <select
-            className='input category'
-            default
-            value={category}
-            id='category'
             name='category'
-            onChange={categoryHandle}
-          >
-            <option hidden>Category</option>
-            <option value='classic'>Classic</option>
-            <option value='fantasy'>Fantasy</option>
-            <option value='thriller'>Thriller</option>
-          </select>
+            placeholder='Category'
+            id='category'
+            ref={categoryInputRef}
+            required
+            className='input category'
+          />
           <button type='submit' className='input btn'>
             ADD BOOK
           </button>
