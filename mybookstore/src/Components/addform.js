@@ -52,12 +52,27 @@ const AddForm = () => {
           <input
             type='text'
             name='category'
-            placeholder='Category'
             id='category'
             ref={categoryInputRef}
             required
             className='input category'
+            default
           />
+
+          {/* <select
+            className='input category'
+            default
+            value={category}
+            id='category'
+            name='category'
+            onChange={categoryHandle}
+          >
+            <option hidden>Category</option>
+            <option value='classic'>Classic</option>
+            <option value='fantasy'>Fantasy</option>
+            <option value='thriller'>Thriller</option>
+          </select> */}
+
           <button type='submit' className='input btn'>
             ADD BOOK
           </button>
