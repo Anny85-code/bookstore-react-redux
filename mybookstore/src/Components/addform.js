@@ -23,7 +23,7 @@ const AddForm = () => {
     };
     dispatch(addBookApi(newBook));
     titleInputRef.current.value = '';
-    categoryInputRef.current.value = '';
+    categoryInputRef();
   }
 
   // dispatch(addBook(newBook));
@@ -49,29 +49,22 @@ const AddForm = () => {
             placeholder='Book Title'
             required
           />
-          <input
-            type='text'
-            name='category'
-            id='category'
-            ref={categoryInputRef}
-            required
-            className='input category'
-            default
-          />
-
-          {/* <select
+          <select
             className='input category'
             default
             value={category}
             id='category'
             name='category'
-            onChange={categoryHandle}
+            ref={categoryInputRef}
           >
             <option hidden>Category</option>
             <option value='classic'>Classic</option>
             <option value='fantasy'>Fantasy</option>
             <option value='thriller'>Thriller</option>
-          </select> */}
+            <option value='western'>Western</option>
+            <option value='history'>History</option>
+            <option value='romance'>Romance</option>
+          </select>
 
           <button type='submit' className='input btn'>
             ADD BOOK
