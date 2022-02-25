@@ -24,26 +24,31 @@ const BookItem = ({ props }) => {
           <li className='book-name'>{title}</li>
         </ul>
         <ul className='last-row-container'>
-          <li className='last-row'>Comments |</li>
+          <li className='last-row'>Comments </li>
           <li
-            className='last-row'
+            className='last-row2'
             type='button'
             onClick={() => handleRemoveBook(item_id)}
           >
-            Remove |
+            Remove
           </li>
-          <li className='last-row'>Edit</li>
+          <li className='last-row3'>Edit</li>
         </ul>
       </div>
-      <div style={{ width: 70, height: 70 }}>
-        <CircularProgressbar value={percentage} text={`${percentage}%`} />;
+      <div className='circle-div'>
+        <div>
+          <CircularProgressbar value={percentage} />
+        </div>
+        <div className='percentage-cn'>
+          <span className='p-counter'>{`${percentage}%`}</span> Completed
+        </div>
       </div>
 
       <hr />
-      <div>
+      <div className='current-c'>
         <ul>
           <li className='left-row top'>Current Chapter</li>
-          <li className='left-row'>Chapter 17</li>
+          <li className='left-row bottom'>Chapter 17</li>
         </ul>
         <button className='left-row-btn' type='submit'>
           Update Progress
