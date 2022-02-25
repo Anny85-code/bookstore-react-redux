@@ -1,34 +1,35 @@
-import React from 'react';
-import { useState } from 'react';
+import { React, useState } from 'react';
+import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../Redux/Books/books';
+import { addBookApi } from '../Redux/Books/books';
 
 const AddForm = () => {
-  const [tittle, setTittle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('');
   const dispatch = useDispatch();
 
-  const tittleHandle = (element) => setTittle(element.target.value);
-  const authorHandle = (element) => setAuthor(element.target.value);
-  const categoryHandle = (element) => setCategory(element.target.value);
-  const clearTittle = () => setTittle('');
-  const clearAuthor = () => setAuthor('');
+  const setup = () => ({
+    item_id: '',
+    title: '',
+    category: '',
+  });
 
-  const submitBookToStore = (e) => {
-    e.preventDefault();
-    const newBook = {
-      tittle,
-      category,
-      author,
-      id: uuidv4(),
-    };
+  const [bookData, setBookData] = useState(setup());
 
-    dispatch(addBook(newBook));
-    clearTittle();
-    clearAuthor();
+  const changeHandler = (event) => {
+    setBookData((prevState) => ({
+      ...prevState,
+      item_id: nanoid(),
+      [event.target.name]: event.target.value,
+    }));
   };
+
+  const { title, category } = bookData;
+
+  function submitBookToStore(event) {
+    event.preventDefault();
+
+    dispatch(addBookApi(bookData));
+    setBookData(setup());
+  }
 
   const styleln = {
     width: '90%',
@@ -44,17 +45,11 @@ const AddForm = () => {
           <input
             type='text'
             className='input name'
-            value={tittle}
-            onChange={tittleHandle}
+            id='title'
+            name='title'
+            value={title}
+            onChange={changeHandler}
             placeholder='Book Title'
-            required
-          />
-          <input
-            type='text'
-            className='input author'
-            value={author}
-            onChange={authorHandle}
-            placeholder='Book Author'
             required
           />
           <select
@@ -63,13 +58,19 @@ const AddForm = () => {
             value={category}
             id='category'
             name='category'
-            onChange={categoryHandle}
+            onChange={changeHandler}
           >
-            <option hidden>Category</option>
+            <option hidden value=''>
+              Category
+            </option>
             <option value='classic'>Classic</option>
             <option value='fantasy'>Fantasy</option>
             <option value='thriller'>Thriller</option>
+            <option value='western'>Western</option>
+            <option value='history'>History</option>
+            <option value='romance'>Romance</option>
           </select>
+
           <button type='submit' className='input btn'>
             ADD BOOK
           </button>

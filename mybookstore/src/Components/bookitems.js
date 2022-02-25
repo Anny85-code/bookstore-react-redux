@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../Redux/Books/books';
+import { deleteBook } from '../Redux/Books/books';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const BookItem = ({ props }) => {
-  const { id, category, tittle, author } = props;
+  const { item_id, category, title } = props;
 
   const dispatch = useDispatch();
 
-  const Remove = () => {
-    dispatch(removeBook(id));
+  const handleRemoveBook = (item_id) => {
+    dispatch(deleteBook(item_id));
   };
 
   const percentage = 66;
@@ -21,12 +21,15 @@ const BookItem = ({ props }) => {
       <div className='books'>
         <ul>
           <li className='title category'>{category}</li>
-          <li className='book-name'>{tittle}</li>
-          <li className='author'>{author}</li>
+          <li className='book-name'>{title}</li>
         </ul>
         <ul className='last-row-container'>
           <li className='last-row'>Comments |</li>
-          <li className='last-row' id={id} onClick={Remove}>
+          <li
+            className='last-row'
+            type='button'
+            onClick={() => handleRemoveBook(item_id)}
+          >
             Remove |
           </li>
           <li className='last-row'>Edit</li>
@@ -51,8 +54,7 @@ const BookItem = ({ props }) => {
 };
 BookItem.propTypes = {
   category: PropTypes.string.isRequired,
-  tittle: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   props: PropTypes.arrayOf.isRequired,
 };
 
