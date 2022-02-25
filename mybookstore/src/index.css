@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root {
   --primary: #eb7d34;
   --secondary: #ada7a6;
@@ -5,23 +6,25 @@
   --light: #eee;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-}
-
 html,
 body {
   display: grid;
   height: 100%;
-  text-align: center;
   place-items: center;
   background: #dde6f0;
 }
 
 .main-heading {
-  color: rgb(16, 120, 216);
+  width: 15rem;
+  height: 2.313rem;
+  font-family: Montserrat;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
 }
 
 .cms {
@@ -29,17 +32,23 @@ body {
   margin-left: 5px;
 }
 
-.main-display {
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 2px 64px rgba(0, 0, 0, 0.2);
+.overall-container {
+  width: 90%;
+  height: 68.563rem;
+  margin: auto;
+  padding: 0 0 49.625rem;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
 }
 
 .nav-bar {
   display: flex;
   flex-direction: row;
-  background-color: var(--light);
-  padding: 10px 0 10px 30px;
+  padding: 10px 0 10px 60px;
+  height: 5.938rem;
+  margin: 0 0 2.375rem;
+  background-color: #fff;
 }
 
 .nav-ul {
@@ -58,26 +67,73 @@ a:-webkit-any-link {
 }
 
 .cont-icon {
-  margin-left: 450px;
+  margin-right: 60px;
+  color: #0290ff;
+  grid-column: 4/4;
+}
+
+.image {
+  border: 1px solid rgb(233, 224, 224);
+  padding: 4px;
+  border-radius: 50%;
+  font-size: 25px;
 }
 
 .link {
-  margin-top: 8px;
+  width: 3.688rem;
+  height: 1rem;
+  margin: 1.125rem 2.563rem 0.688rem 0;
+  font-family: Montserrat;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: var(--black-two);
+}
+
+.link2 {
+  width: 6.563rem;
+  height: 1rem;
+  margin: 1.125rem 2.563rem 0.688rem 0;
+  opacity: 0.5;
+  font-family: Montserrat;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: var(--black-two);
+  padding-left: 0;
 }
 
 .book-container {
-  display: flex;
-  background-color: var(--light);
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
   width: 89%;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   padding: 10px;
+  height: 10.625rem;
+  border-radius: 4px;
+  border: solid 1px var(--white);
+  background-color: #fff;
 }
 
 .title {
-  font-size: 15px;
+  width: 3.063rem;
+  height: 1.125rem;
+  margin: 0 2.438rem 0 0;
+  opacity: 0.5;
+  font-family: Montserrat;
+  font-size: 0.875rem;
   font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
 }
 
 .author {
@@ -86,8 +142,47 @@ a:-webkit-any-link {
 }
 
 .book-name {
-  font-size: 20px;
+  width: 12.313rem;
+  height: 1.813rem;
+  margin: 0.188rem 20.188rem 0 0;
+  font-family: RobotoSlab;
+  font-size: 1.375rem;
   font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: var(--black-two);
+}
+
+.circle-div {
+  width: 70px;
+  height: 70px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.percentage-cn {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-left: 80px;
+  padding-top: 10px;
+}
+
+.p-counter {
+  width: 4.25rem;
+  height: 2.438rem;
+  font-family: Montserrat;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
 }
 
 .last-row-container {
@@ -96,10 +191,45 @@ a:-webkit-any-link {
 }
 
 .last-row {
-  margin-right: 10px;
-  color: rgb(136, 136, 211);
-  font-size: 14px;
-  cursor: pointer;
+  width: 4.563rem;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-family: RobotoSlab;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.last-row2 {
+  width: 3.375rem;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-family: RobotoSlab;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.last-row3 {
+  width: 1.688rem;
+  height: 1.188rem;
+  margin: 0.188rem 18.625rem 0.125rem 1.063rem;
+  font-family: RobotoSlab;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
 }
 
 .left-row {
@@ -108,15 +238,62 @@ a:-webkit-any-link {
 }
 
 .left-row-btn {
-  width: 150px;
-  padding: 5px;
-  background-color: rgb(16, 120, 216);
-  color: var(--secondary);
+  font-family: RobotoSlab;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  width: 11.5rem;
+  height: 2.063rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border: none;
+  border-radius: 3px;
+  background-color: #0290ff;
+}
+
+.current-c {
+  text-align: left;
+}
+
+.current-c ul {
+  padding-left: 0;
+}
+
+.current-c ul li {
+  margin-left: 0;
 }
 
 .top {
-  color: #615c5c;
-  font-weight: 200;
+  width: 7.875rem;
+  height: 1.125rem;
+  margin: 0.063rem 3.625rem 0 3.688rem;
+  opacity: 0.5;
+  font-family: RobotoSlab;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+}
+
+.bottom {
+  width: 4.688rem;
+  height: 1.313rem;
+  margin: 0.438rem 6.813rem 0.25rem 3.688rem;
+  font-family: RobotoSlab;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: var(--black-two);
 }
 
 .form-items {
@@ -129,29 +306,81 @@ form {
 }
 
 .form-header {
-  text-align: left;
-  margin-bottom: 8px;
-  padding-left: 35px;
-  font-size: 18px;
+  padding-left: 55px;
+  width: 10.875rem;
+  height: 1.5rem;
+  margin: 1.813rem 32.75rem 1.188rem 0;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
 }
 
 .input {
-  margin-right: 20px;
+  margin-right: 10px;
   padding: 5px;
+  margin-left: 20px;
 }
 
 .name {
-  width: 300px;
+  width: 540px;
+  padding: 6px;
+  height: 2.813rem;
+  border-radius: 4px;
+  border: solid 1px var(--white);
+  background-color: #fff;
 }
 
-.category {
+.name::placeholder {
+  width: 4.75rem;
+  height: 1.188rem;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: var(--pinkish-grey);
+}
+
+.category1 {
   width: 200px;
+  height: 2.813rem;
+  margin: 1.188rem 2.125rem 0;
+  padding: 0.375rem 0.938rem 0.563rem 1rem;
+  border-radius: 4px;
+  border: solid 1px var(--white);
+  background-color: #fff;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: var(--pinkish-grey);
 }
 
 .btn {
-  width: 155px;
-  color: var(--light);
-  background-color: rgb(16, 120, 216);
+  border: none;
+  width: 11.5rem;
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: RobotoSlab;
+  font-size: 0.813rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
 }
 
 .ftn {

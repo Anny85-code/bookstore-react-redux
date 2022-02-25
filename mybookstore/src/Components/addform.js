@@ -33,7 +33,7 @@ const AddForm = () => {
 
   const styleln = {
     width: '90%',
-    margin: '20px 40px',
+    margin: '20px 55px',
   };
 
   return (
@@ -53,7 +53,7 @@ const AddForm = () => {
             required
           />
           <select
-            className='input category'
+            className='input category1'
             default
             value={category}
             id='category'

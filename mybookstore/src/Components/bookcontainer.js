@@ -12,17 +12,16 @@ const BooksContainer = () => {
   const books = useSelector((state) => state.booksReducer);
 
   return (
-    <>
-      <div className='main-display'>
-        {books.map((book) => (
-          <div key={book.item_id}>
-            <BookItem props={book} />
-            <br />
-          </div>
-        ))}
-      </div>
+    <div className='main-display'>
+      {books.map((book) => (
+        <div key={book.item_id}>
+          <BookItem props={book} />
+          <br />
+        </div>
+      ))}
+
       <AddForm />
-    </>
+    </div>
   );
 };
 

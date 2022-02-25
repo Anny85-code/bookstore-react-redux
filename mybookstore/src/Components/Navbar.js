@@ -26,11 +26,13 @@ const Navbar = () => {
           <li className='link'>
             <Link to='./'>Books</Link>
           </li>
-          <li className='link'>
+          <li className='link2'>
             <Link to='/categories'>Categories</Link>
           </li>
           <li className='cont-icon'>
-            <ImUser />
+            <div className='image'>
+              <ImUser />
+            </div>
           </li>
         </ul>
       </nav>

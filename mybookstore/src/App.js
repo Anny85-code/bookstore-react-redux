@@ -9,7 +9,7 @@ import './index.css';
 
 function App() {
   return (
-    <>
+    <div className='overall-container'>
       <Provider store={store}>
         <Navbar />
         <Routes>
@@ -17,7 +17,7 @@ function App() {
           <Route path='/categories' element={<Categories />} />
         </Routes>
       </Provider>
-    </>
+    </div>
   );
 }
 
