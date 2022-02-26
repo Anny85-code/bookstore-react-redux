@@ -1,12 +1,12 @@
 ## BOOKSTORE-REACT-REDUX
 
-## Live preview from [github] Comming soon!
+## Live preview from [github](https://anny85-code.github.io/bookstore-react-redux/)
 
 Quick review of page amd code.
 
 ## Screenshots
 
-![bookstore](https://user-images.githubusercontent.com/87186552/155023330-a47d0419-88e2-4227-839c-eaf00f190e7b.png)
+![bookstore-image](https://user-images.githubusercontent.com/87186552/155838471-10cd2180-1e94-4d12-9c4e-a4d5c1bac35f.png)
 
 ## General info
 
