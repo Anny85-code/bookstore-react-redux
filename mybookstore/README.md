@@ -6,7 +6,8 @@ Quick review of page amd code.
 
 ## Screenshots
 
-![bookstore-image](https://user-images.githubusercontent.com/87186552/155838471-10cd2180-1e94-4d12-9c4e-a4d5c1bac35f.png)
+![redux-bookstoreimage-readme (2)](https://user-images.githubusercontent.com/87186552/164889365-53567073-4b84-4bb5-a3d8-f9cc07f5d390.png)
+
 
 ## General info
 
