@@ -59,7 +59,6 @@ export const deleteBook = (id) => async (dispatch) => {
       method: 'DELETE',
     }
   ).then((response) => response.text());
-  console.log('i got here');
   dispatch(removeBook(id));
 };
 

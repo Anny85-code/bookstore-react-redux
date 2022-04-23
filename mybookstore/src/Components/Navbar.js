@@ -3,18 +3,7 @@ import { Link } from 'react-router-dom';
 import { ImUser } from 'react-icons/im';
 
 const Navbar = () => {
-  const links = [
-    {
-      id: 1,
-      path: '/',
-      navigation: 'Books',
-    },
-    {
-      id: 2,
-      path: '/categories',
-      navigation: 'Categories',
-    },
-  ];
+  
 
   return (
     <div>
